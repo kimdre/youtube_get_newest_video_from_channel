@@ -41,7 +41,7 @@ class API:
         return video_title, video_url
 
 # Add your Youtube V3 API Key here
-API_KEY = 'AIzaSyC0wpGPW4BjDZwfhCK2L_Wpj2sP5evgxSQ'
+API_KEY = ''
 
 # Add the Channel IDs here (as part of the channel url)
 CHANNEL_ID = ['1',  # ID 1
