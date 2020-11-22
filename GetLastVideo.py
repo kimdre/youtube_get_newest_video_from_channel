@@ -40,19 +40,21 @@ class API:
 
         return video_title, video_url
 
-# Add your Youtube V3 API Key here
+
+# Add your Youtube Data API V3 Key here
 API_KEY = ''
 
-# Add the Channel IDs here (as part of the channel url)
-CHANNEL_ID = ['1',  # ID 1
-              '2',  # ID 2
-              #And so on
-              ]
+# Add the Channel IDs here
+# When you only know the channel name you can get the ID from here https://commentpicker.com/youtube-channel-id.php
+CHANNEL_ID = [
+    'ID1',
+    'ID2'
+]
 
 videos = []
 
 for item in CHANNEL_ID:
     var = API(API_KEY, item)
     videos.append(var.start_find_video_process())
-    
+
 print(videos)
