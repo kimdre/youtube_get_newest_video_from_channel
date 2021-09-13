@@ -19,8 +19,8 @@ steps:
           from GetLatestVideo import API
           import os
 
-          YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
-          YOUTUBE_CHANNEL_ID = os.getenv('YOUTUBE_CHANNEL_ID')
+          YOUTUBE_API_KEY = os.getenv("YOUTUBE_API_KEY")
+          YOUTUBE_CHANNEL_ID = os.getenv("YOUTUBE_CHANNEL_ID")
 
           CHANNEL_ID = [
             YOUTUBE_CHANNEL_ID
