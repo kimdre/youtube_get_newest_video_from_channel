@@ -1,0 +1,35 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: test
+    image: python:3.8-alpine
+    pull: if-not-exists
+    environment:
+      YOUTUBE_API_KEY:
+        from_secret: YOUTUBE_API_KEY
+      YOUTUBE_CHANNEL_ID: 'UCmpilcSVu1T-AsAiiHbfpcA'
+      TZ: 'Europe/Berlin'
+      commands:
+        - apk --no-cache add gcc musl-dev tzdata
+        - pip3 install --no-cache-dir -r requirements.txt
+        - |
+          python3 -c '
+          from GetLatestVideo import API
+          import os
+
+          YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
+          YOUTUBE_CHANNEL_ID = os.getenv('YOUTUBE_CHANNEL_ID')
+
+          CHANNEL_ID = [
+            YOUTUBE_CHANNEL_ID
+          ]
+
+          videos = []
+          yt = API(YOUTUBE_API_KEY)
+
+          for channel in CHANNEL_ID:
+            videos.append(yt.get_latest_video(channel))
+
+          print(videos)'
