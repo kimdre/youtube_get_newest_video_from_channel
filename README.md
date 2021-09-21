@@ -38,3 +38,6 @@ for channel in CHANNEL_ID:
 
 print(videos)
 ````
+
+## Credits
+Repo Icon made by [Freepik](https://www.freepik.com "Freepik") from [www.flaticon.com](https://www.flaticon.com/ "Flaticon")
